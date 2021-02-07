@@ -3,53 +3,57 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={`${styles.main} ${styles.container}`}>
+        <h1 className={styles.title}>Hi,I'am</h1>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <a href="https://nextjs.org">Leul</a>
         </h1>
+        <h1 className={styles.title}>A Software Developer</h1>
 
         <p className={styles.description}>
-          Get started by editing{` `}
-          <code className={styles.code}>pages/index.js</code>
+          Developing fullstack web, mobile and desktop applictions with
+          Javascript and Typescript mainly.
         </p>
 
-        <p className={styles.description}>This is not an official starter!</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0070f3" fill-opacity="1" d="M0,224L48,186.7C96,149,192,75,288,64C384,53,480,107,576,117.3C672,128,768,96,864,106.7C960,117,1056,171,1152,170.7C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        <div className={`${styles.fcontainer} ${styles.grid_bg_blue}`}>
+          <div className={styles.grid}>
+            <div className={styles.card}>
+              <h3>Lorem</h3>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, numquam.</p>
+            </div>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+            <div className={styles.card}>
+              <h3>Lorem, ipsum.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, exercitationem!</p>
+            </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <div className={styles.card}>
+              <h3>Lorem</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, hic officia!</p>
+            </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=typescript-nextjs-starter"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+            <div className={styles.card}>
+              <h3>Lorem, ipsum.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quo maxime laborum.
+              </p>
+            </div>
+          </div>
         </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#0070f3"
+            fill-opacity="1"
+            d="M0,160L80,133.3C160,107,320,53,480,42.7C640,32,800,64,960,85.3C1120,107,1280,117,1360,122.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          ></path>
+        </svg>
       </main>
 
       <footer className={styles.footer}>
@@ -58,8 +62,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{` `}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          &copy; Made By leularia {new Date().getFullYear()}
         </a>
       </footer>
     </div>

@@ -1,9 +1,14 @@
+* {
+  font-family: 'GT Walsheim Pro', sans-serif;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #080808;
+  color: #fff;
+  font-size: 12px;
 }
 
 a {
@@ -13,4 +18,16 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+@media (min-width: 600px) {
+  html, body {
+    font-size: 14px;
+  }
+}
+@media(min-width: 1000px) {
+  html, body {
+    font-size: 17px;
+  }
 }

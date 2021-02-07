@@ -49,7 +49,8 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 4.5rem;
+  font-family: 900;
 }
 
 .title,
@@ -58,8 +59,13 @@
 }
 
 .description {
+  width: 75%;
+  max-width: 600px;
+  margin: 2rem auto;
+  color: #c9c9c9;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 .code {
@@ -71,6 +77,9 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+.fcontainer {
+  width: 100%;
+}
 .grid {
   display: flex;
   align-items: center;
@@ -78,6 +87,11 @@
   flex-wrap: wrap;
   max-width: 800px;
   margin-top: 3rem;
+  margin: auto;
+}
+
+.grid_bg_blue {
+  background: #0070f3;
 }
 
 .card {
@@ -86,17 +100,17 @@
   padding: 1.5rem;
   text-align: left;
   color: inherit;
+  color: #fff;
   text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
+  border: 1px solid #ccc9;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  /* color: #0070f3;
+  border-color: #0070f3; */
 }
 
 .card h3 {
@@ -106,7 +120,8 @@
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
+  color: #dedede;
+  font-size: 1.15rem;
   line-height: 1.5;
 }
 
