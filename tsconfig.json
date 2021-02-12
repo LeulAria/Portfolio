@@ -14,14 +14,15 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./src",
+    "noImplicitAny": false,
     "paths": {
       "@/*": ["./*"]
     },
     "typeRoots": [
-      "node_modules/@types",
-      "@types"
+      "./node_modules/@types",
+      "./@types"
     ]
   },
-  "exclude": ["node_modules", "@types"],
+  "exclude": ["node_modules", "./@types"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
