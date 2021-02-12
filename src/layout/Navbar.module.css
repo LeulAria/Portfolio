@@ -1,11 +1,18 @@
 .navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
   height: 55px;
   width: 100%;
+  overflow: hidden;
   border-bottom: 1px solid #333;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10%;
+  z-index: 100;
+  background-color: rgba(20, 20, 20, .48);
+  backdrop-filter: blur(6px);
 }
 
 .logo {
@@ -14,7 +21,7 @@
 }
 
 .navbar_items {
-  display: flex;
+  display: none;
   align-items: center;
   list-style: none;
   height: 100%;
@@ -26,10 +33,16 @@
   margin: 0px 1rem;
 }
 .current_page {
-    border-bottom: 1.7px solid #fff;
+  border-bottom: 1.7px solid #fff;
 }
 .navbar_items > li > a{
   font-size: .93rem;
 }
 /* .navbar > li > a{
 } */
+
+@media (min-width: 800px) {
+  .navbar_items {
+    display: flex;
+  }
+}
