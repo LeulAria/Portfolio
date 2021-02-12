@@ -18,9 +18,9 @@
       "@/*": ["./*"]
     },
     "typeRoots": [
-      "./typings"
+      "@types"
     ]
   },
-  "exclude": ["node_modules", "./typings"],
+  "exclude": ["node_modules", "@types"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
