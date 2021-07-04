@@ -15,12 +15,12 @@ export default function Home() {
 
       <main className={`${styles.main} ${styles.container}`}>
         <div className={styles.fixed_container}>
-          <div className={styles.fixed_section}>
-            <h1 className={styles.title}>Hi,I'am</h1>
+          <div className={styles.hero_section}>
+            <h1 className={styles.title}>Hi,I&apos;am</h1>
             <h1 className={styles.title}>
-              <a href="https://nextjs.org">Leul</a>
+              <a>Leul</a>
             </h1>
-            <h1 className={styles.title}>A Software Developer</h1>
+            <h1 className={styles.title}>Software Engineer</h1>
 
             <p className={styles.description}>
               Developing fullstack web, mobile and desktop applictions with
@@ -29,72 +29,52 @@ export default function Home() {
           </div>
         </div>
 
-        <section className={styles.section}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path
-              fill="#0070f3"
-              fill-opacity="1"
-              d="M0,224L48,186.7C96,149,192,75,288,64C384,53,480,107,576,117.3C672,128,768,96,864,106.7C960,117,1056,171,1152,170.7C1248,171,1344,117,1392,90.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </svg>
-          <div className={`${styles.fcontainer} ${styles.grid_bg_blue}`}>
+        <section
+          className={`${styles.section} ${styles.container} ${styles.projects_section}`}
+        >
+          <div>
+            <Fade bottom>
+              <h1 className={styles.projects_title}>Personal Projects</h1>
+            </Fade>
             <div className={styles.grid}>
-              <Fade bottom big cascade>
+              <Fade bottom cascade>
                 <div className={styles.card}>
-                  <h3>Lorem</h3>
+                  <h3>FireQuery</h3>
                   <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Molestiae, numquam.
+                    Firequery is a react library which binds firebase to make it
+                    easy to work with firebase.
                   </p>
                 </div>
 
                 <div className={styles.card}>
-                  <h3>Lorem, ipsum.</h3>
+                  <h3>React Rolebased Router</h3>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Unde, exercitationem!
+                    Binds react-router for creating an easy to use library for
+                    creating and managing routes with role.
                   </p>
                 </div>
 
                 <div className={styles.card}>
-                  <h3>Lorem</h3>
+                  <h3>React Form Aria</h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. At,
-                    hic officia!
+                    A react-hook form library which allows creates material-ui
+                    form, from json schema.
                   </p>
                 </div>
 
                 <div className={styles.card}>
-                  <h3>Lorem, ipsum.</h3>
+                  <h3>Remedy</h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quidem quo maxime laborum.
+                    a simple real time chat application for chatting, blogging,
+                    sharing ideas and finding friends.
                   </p>
                 </div>
               </Fade>
+              <button style={{ marginTop: `2rem` }} className={styles.btn}>
+                load more
+              </button>
             </div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path
-              fill="#0070f3"
-              fill-opacity="1"
-              d="M0,160L80,133.3C160,107,320,53,480,42.7C640,32,800,64,960,85.3C1120,107,1280,117,1360,122.7L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-            ></path>
-          </svg>
-        </section>
-        <section
-          className={`${styles.section} ${styles.container}`}
-          style={{
-            marginTop: '-300px',
-            paddingTop: '0px',
-            minHeight: '100vh',
-            zIndex: 2,
-            background: '#111',
-          }}
-        >
-          <Fade bottom big>
-            <h1 style={{ fontSize: '3rem', margin: 0 }}>Testimonials</h1>
-          </Fade>
         </section>
       </main>
 
