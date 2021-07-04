@@ -36,9 +36,6 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-reveal": "1.2.2",
-    "lint": "eslint 'src/**/*.+(ts|tsx|js|jsx)'",
-    "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write \"**/*.+(ts|tsx|js|jsx|json|css|md)\""
   },
   "devDependencies": {
     "@commitlint/cli": "11.0.0",
