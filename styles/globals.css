@@ -70,3 +70,11 @@ a {
     @apply h-16 w-16 p-5 flex-1 transition-all duration-300 hover:dark:text-white hover:text-black cursor-pointer hover:scale-125 rounded-full;
   }
 }
+
+/* scroll bar */
+/* .ps__rail-y, .ps__rail-x {
+  background-color: rgba(0,0,0,0.015) !important;
+}
+
+.ps__thumb-y, .ps__thumb-x {
+} */

@@ -27,7 +27,7 @@ const Hero = () => {
         height="1600"
         viewBox="0 0 4440 1600"
         preserveAspectRatio="none"
-        className="absolute w-full h-full top-0 left-0"
+        className="hidden md:block absolute w-full h-full top-0 left-0"
       >
         <g mask='url("#SvgjsMask1488")' fill="none">
           <g
@@ -134,7 +134,7 @@ const Hero = () => {
         height="1600"
         viewBox="0 0 4440 1600"
         preserveAspectRatio="none"
-        className="absolute w-full h-full top-0 left-0"
+        className="hidden md:block absolute w-full h-full top-0 left-0"
       >
         <g mask='url("#SvgjsMask1488")' fill="none">
           <g
@@ -233,10 +233,10 @@ const Hero = () => {
         </defs>
       </motion.svg>
 
-      <div className="w-[90%] md:w-[80%] -mt-[15vh] md:m-auto md:mt-auto z-10 relative">
+      <div className="w-[90%] md:w-[80%] -mt-10 md:m-auto md:mt-auto z-10 relative">
         <div className="flex items-center justify-center">
           <div className="text-center">
-            <h1 className="w-full font-semibold text-base md:text-3xl dark:text-white">
+            <h1 className="w-full font-semibold text-xl md:text-3xl dark:text-white">
               .🎉Hooray i'm Leul
             </h1>
 
@@ -247,9 +247,9 @@ const Hero = () => {
               Located in Addis Ababa, working as a fullstack software engineer developing microservice's and web-applications. 
             </h1>
 
-            <div className="flex justify-center dark:text-zinc-50 max-w-[400px] m-auto mt-10 h-[60px] pt-3">
-              <button className=" text-gray-00 bg-clip-text text-transparent bg-gradient-to-l  from-[#4ae806] to-[#5362ea] border-2 border-white px-9 py-2 flex items-center font-semibold rounded-3xl transition-transform duration-500 hover:scale-110">Projects</button>
-              <button className="px-5 py-4 flex items-center font-semibold rounded-2xl mx-5">Contact Me -></button>
+            <div className="flex flex-col md:flex-row justify-center dark:text-zinc-50 max-w-[70%] md:max-w-[400px] m-auto mt-16 md:mt-10 h-[60px] pt-3">
+              <button className=" text-gray-00 bg-clip-text text-transparent bg-gradient-to-l  from-[#4ae806] to-[#5362ea] border-[3px] border-[#bdeaaa] px-9 py-2 flex items-center font-semibold rounded-3xl transition-transform duration-500 hover:scale-110 text-center justify-center">Projects</button>
+              <button className="px-5 py-4 flex items-center font-semibold rounded-2xl mx-5 justify-center">Contact Me -></button>
             </div>
           </div>
         </div>

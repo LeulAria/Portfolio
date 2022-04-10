@@ -23,12 +23,9 @@ const Stacks = () => {
         <div className="flex justify-center">
           <motion.div
             ref={ref}
-            variants={variants}
             className="text-center"
-            animate={inView ? "visible" : "hidden"}
-            transition={{ duration: 2, ease: "easeOut" }}
           >
-            <h1 className="font-normal mb-6 text-xl md:text-2xl lg:text-2xl max-w-[350px] m-auto md:max-w-full text-gray-00 bg-clip-text text-transparent bg-gradient-to-l   from-[#0f5ee8] to-[#963136] dark:from-[#3D81F4] dark:to-[#E4474E]">
+            <h1 className="font-semibold mb-6 text-xl md:text-2xl lg:text-2xl max-w-[350px] m-auto md:max-w-full text-gray-00 bg-clip-text text-transparent bg-gradient-to-l   from-[#0f5ee8] to-[#963136] dark:from-[#3D81F4] dark:to-[#E4474E]">
               Here are some of my stacks and tools i have worked with.
             </h1>
 
