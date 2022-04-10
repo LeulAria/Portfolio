@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -8,7 +9,12 @@ const About = () => {
           <div className="flex justify-evenly flex-col md:flex-row">
             <div className="hidden md:flex items-center justify-center w-[300px]">
               <div className="flex items-center justify-center w-[250px] h-[250px] overflow-hidden z-2">
-                <img src="/img/me.jpeg" alt="me" className="" />
+                <Image
+                  src="/img/me.jpeg"
+                  alt="my picture"
+                  width={250}
+                  height={250}
+                />
               </div>
             </div>
             <div className="flex flex-col items-center md:items-start py-[6%] text-center md:text-left h-full">
