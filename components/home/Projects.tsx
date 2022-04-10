@@ -52,13 +52,13 @@ const Projects = () => {
               Personal Projects
             </h1>
             <h1 className="font-normal mb-6 text-base md:text-xl text-zinc-500 max-w-[280px] md:max-w-[600px]">
-              It's my passion and here are a few of my personal projects that i
-              have worked on.
+              {`It's my passion and here are a few of my personal projects that i
+              have worked on.`}
             </h1>
           </div>
           <div className="flex flex-wrap justify-center md:w-[90%] m-auto">
             {projects.map((project, i) => (
-              <div className="w-full md:w-10/12 xl:w-4/12 min-h-[300px] max-w-[350px] p-5 group">
+              <div className="w-full md:w-10/12 xl:w-4/12 min-h-[300px] max-w-[350px] p-5 group" key={project.name}>
                 <div className="flex flex-col ring-1 ring-gray-900/30 bg-[rgba(50,50,50,0.25)] text-white w-full h-full rounded-xl p-3 cursor-pointer transition-color duration-300 hover:bg-[rgba(30,30,35,.2)] hover:ring-gray-900/40">
                   <div className="flex items-center">
                     <svg
@@ -78,7 +78,9 @@ const Projects = () => {
                   <div className="px-3 pb-3 text-base text-zinc-100 flex-grow">
                     {project?.description}
                   </div>
-                  <div className="mt-5 text-xs mb-2 px-3">{project.tools.join(", ")}</div>
+                  <div className="mt-5 text-xs mb-2 px-3">
+                    {project.tools.join(", ")}
+                  </div>
                 </div>
               </div>
             ))}

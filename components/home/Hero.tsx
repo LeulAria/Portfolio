@@ -237,19 +237,19 @@ const Hero = () => {
         <div className="flex items-center justify-center">
           <div className="text-center">
             <h1 className="w-full font-semibold text-xl md:text-3xl dark:text-white">
-              .🎉Hooray i'm Leul
+              {"🎉Hooray i'm Leul"}
             </h1>
 
             <h1 className="min-h-[80px] md:min-h-[160px] mt-3 mx-auto max-w-[680px] font-extrabold text-center text-3xl md:text-7xl text-black dark:text-white">
               Fullstack Software Developer
             </h1>
             <h1 className="font-normal mb-6 mx-auto max-w-[260px] md:max-w-[500px] text-sm md:text-lg text-gray-00 bg-clip-text text-transparent bg-gradient-to-l  from-[#a7ef89] to-[#9187ef]">
-              Located in Addis Ababa, working as a fullstack software engineer developing microservice's and web-applications. 
+              {"Located in Addis Ababa, working as a fullstack software engineer developing microservice's and web-applications."} 
             </h1>
 
             <div className="flex flex-col md:flex-row justify-center dark:text-zinc-50 max-w-[70%] md:max-w-[400px] m-auto mt-16 md:mt-10 h-[60px] pt-3">
               <button className=" text-gray-00 bg-clip-text text-transparent bg-gradient-to-l  from-[#4ae806] to-[#5362ea] border-[3px] border-[#bdeaaa] px-9 py-2 flex items-center font-semibold rounded-3xl transition-transform duration-500 hover:scale-110 text-center justify-center">Projects</button>
-              <button className="px-5 py-4 flex items-center font-semibold rounded-2xl mx-5 justify-center">Contact Me -></button>
+              <button className="px-5 py-4 flex items-center font-semibold rounded-2xl mx-5 justify-center">Contact Me {'->'}</button>
             </div>
           </div>
         </div>

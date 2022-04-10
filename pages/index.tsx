@@ -5,7 +5,6 @@ import Stacks from "../components/home/Stacks";
 import Projects from "../components/home/Projects";
 import { useEffect } from "react";
 import Footer from "../components/Layout/Footer";
-import PerfectScrollbar from "react-perfect-scrollbar";
 import AppBar from "../components/Layout/AppBar";
 import About from "../components/home/About";
 

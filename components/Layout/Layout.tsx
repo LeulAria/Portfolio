@@ -2,6 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import AppBar from "./AppBar";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 
 interface Props {
   children: React.ReactNode;
@@ -24,14 +25,13 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
       <AnimatePresence>
-        <div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          
         >
           <AppBar />
-        </div>
+        </motion.div>
       </AnimatePresence>
 
       {children}
