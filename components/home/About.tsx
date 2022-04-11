@@ -13,7 +13,7 @@ const About = () => {
                   src="/img/me.jpeg"
                   alt="my picture"
                   width={250}
-                  height={250}
+                  height={400}
                 />
               </div>
             </div>
