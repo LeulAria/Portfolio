@@ -44,38 +44,22 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-[100vh] mt-10">
-      <div className="w-[90%] md:w-[80%] m-auto my z-10 relative">
+    <div className="mt-10">
+      <div className="w-full m-auto my z-10 relative">
         <div className="flex flex-col items-center">
-          <div className="text-center">
-            <h1 className="font-extrabold mb-3 text-3xl md:text-5xl text-black dark:text-white">
-              Personal Projects
-            </h1>
-            <h1 className="font-normal mb-6 text-base md:text-xl text-zinc-500 max-w-[280px] md:max-w-[600px]">
-              {`It's my passion and here are a few of my personal projects that i
-              have worked on.`}
-            </h1>
-          </div>
           <div className="flex flex-wrap justify-center md:w-[90%] m-auto">
             {projects.map((project, i) => (
-              <div className="w-full md:w-10/12 xl:w-4/12 min-h-[300px] max-w-[350px] p-5 group" key={project.name}>
-                <div className="flex flex-col ring-1 ring-gray-900/30 bg-[rgba(50,50,50,0.25)] text-white w-full h-full rounded-xl p-3 cursor-pointer transition-color duration-300 hover:bg-[rgba(30,30,35,.2)] hover:ring-gray-900/40">
+              <div
+                className="w-full md:w-10/12 xl:w-4/12 max-w-[350px] p-5 group"
+                key={project.name}
+              >
+                <div className="flex flex-col ring-[1px] ring-gray-300/50 rounded-lg dark:ring-gray-900/50  w-full h-full p-6 cursor-pointer transition-color duration-300  hover:ring-gray-500/40 dark:hover:ring-gray-900/40">
                   <div className="flex items-center">
-                    <svg
-                      version="1.1"
-                      fill="currentColor"
-                      viewBox="0 0 700 700"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-14 h-14 text-zinc-900 transition-color duration-300 group-hover:text-zinc-700"
-                    >
-                      <path
-                        d="m274.17 52.5c-83.766 0-151.67 67.902-151.67 151.67v151.66c0 83.766 67.902 151.67 151.67 151.67h151.66c83.766 0 151.67-67.902 151.67-151.67v-151.66c0-83.766-67.902-151.67-151.67-151.67zm111.71 140.88c-6.8359 6.8359-6.8359 17.918 0 24.75l61.871 61.871-61.871 61.871c-6.8359 6.8359-6.8359 17.914 0 24.75 6.832 6.8359 17.914 6.8359 24.75 0l74.242-74.246c6.8359-6.8359 6.8359-17.914 0-24.75l-74.242-74.246c-6.8359-6.832-17.918-6.832-24.75 0zm-71.758 0c6.8359 6.8359 6.8359 17.918 0 24.75l-61.871 61.871 61.871 61.871c6.8359 6.8359 6.8359 17.914 0 24.75-6.8359 6.8359-17.914 6.8359-24.75 0l-74.246-74.246c-6.832-6.8359-6.832-17.914 0-24.75l74.246-74.246c6.8359-6.832 17.914-6.832 24.75 0z"
-                        fillRule="evenodd"
-                      />
-                    </svg>
-                    <h2 className="ml-2 font-extrabold">{project?.name}</h2>
+                    <h2 className="mb-3 font-extrabold text-lg dark:text-white">
+                      {project?.name}
+                    </h2>
                   </div>
-                  <div className="px-3 pb-3 text-base text-zinc-100 flex-grow">
+                  <div className="text-base flex-grow text-gray-700 dark:text-gray-300">
                     {project?.description}
                   </div>
                   <div className="mt-5 text-xs mb-2 px-3">
@@ -86,7 +70,7 @@ const Projects = () => {
             ))}
 
             <div className="w-full md:w-10/12 xl:w-4/12 min-h-[230px] max-w-[350px] p-5">
-              <div className="flex flex-col items-center justify-center border-[3px] border-dashed border-[rgba(50,50,50,0.25)] text-zinc-600 w-full h-full rounded-xl p-3 cursor-pointer transition-color duration-300 hover:border-[#38383ffe]">
+              <div className="flex flex-col items-center justify-center rounded-lg border-[1px] border-dashed border-[rgba(50,50,50,0.25)] text-zinc-600 w-full h-full p-3 cursor-pointer transition-color duration-300 hover:border-[#38383ffe]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-20 h-20"

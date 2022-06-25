@@ -1,0 +1,71 @@
+---
+title: "Two Forms of Pre-rendering"
+date: "2020-01-01"
+---
+
+Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+
+- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
+- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
+
+Importantly, Next.js lets you **choose** which pre-rendering form
+
+
+## Table of Contents
+
+- [Backend Basics](/blog/backend#backend-basics)
+- [Do You Even Need a Database?](/blog/backend#do-you-even-need-a-database)
+- [Low Code Solutions](/blog/backend#low-code-solutions)
+- [Terms To Understand](/blog/backend#terms-to-understand)
+  - [SQL / NoSQL](/blog/backend#sql--nosql)
+  - [GraphQL / REST](/blog/backend#graphql--rest)
+  - [Authentication / Authorization](/blog/backend#authentication--authorization)
+  - [Hosted / Self-Hosted](/blog/backend#hosted--self-hosted)
+  - [Serverless](/blog/backend#serverless)
+  - [Data Modeling](/blog/backend#data-modeling)
+- [Levels of Abstraction](/blog/backend#levels-of-abstraction)
+- [List of Services](/blog/backend#list-of-services)
+  - [Backend (as a Service)](/blog/backend#backend-as-a-service)
+    - [Supabase](/blog/backend#supabase)
+    - [Hasura](/blog/backend#hasura)
+  - [Build Your Own Backend](/blog/backend#build-your-own-backend)
+    - [Prisma](/blog/backend#prisma)
+- [Should You Use a CMS?](/blog/backend#should-you-use-a-cms)
+- [Starting From Scratch](/blog/backend#starting-from-scratch)
+- [Conclusion / Resources](/blog/backend#conclusion--resources)
+
+## Backend Basics
+
+What is this scary place, **the back-end?** You can boil it down to this:
+
+- You need a place to store data ([database](https://dataguide.prisma.io/intro/what-are-databases))
+- You need a method of retrieving the data ([API](https://en.wikipedia.org/wiki/Application_programming_interface))
+
+As a front-end engineer, you've probably worked with APIs before. They allow you to fetch data from some database, somewhere.
+On a long enough timeline, you'll eventually need to build your own API or
+work with an existing codebase that has a back-end. This brings us to our first question.
+
+## Do You Even Need a Database?
+
+You need a place to store data, right? Here are some questions to consider:
+
+- Can the data live alongside the code?
+- Can the data be tracked with source control?
+- Do non-technical people need to modify the data?
+- Do you need different levels of access?
+
+If you can store your data with your code in [source control](https://aws.amazon.com/devops/source-control),
+you might be fine using [Markdown](https://guides.github.com/features/mastering-markdown/)
+with [git](https://git-scm.com/) – that's what [this blog](https://github.com/leerob/leerob.io) uses.
+It's also worth mentioning you _could_ use JSON files as a pseudo-database if you fall into this category.
+
+However, you're likely reading this article because **you need a database**. Before we start learning about how you can create
+your own backend, you might also consider a low-code solution.
+
+## Low Code Solutions
+
+Since you're a front-end developer, you might be able to utilize a low code solution.
+These low code tools are arguably the fastest way to get access to some remote data.
+
+Common examples include [Google Sheets](https://github.com/franciscop/use-spreadsheet) or [Airtable](https://www.gatsbyjs.org/packages/gatsby-source-airtable/)
+as a database. There are other services that provide an [API abstraction](https://nocodeapi.com/) on a variety of data sources.

@@ -14,8 +14,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"]
+    },
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".contentlayer/generated"
+  ],
   "exclude": ["node_modules"]
 }

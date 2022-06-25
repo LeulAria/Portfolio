@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import AppBar from "./AppBar";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
+import { useTheme } from "context/ThemeContext";
 
 interface Props {
   children: React.ReactNode;
 }
 
 const Layout = ({ children }: Props) => {
+  const { theme } = useTheme();
   const [scrollYNumber, setScrollYNumber] = useState(0);
   const [scrollUpTrigger, setScrollUpTrigger] = useState(false);
 
@@ -23,21 +25,25 @@ const Layout = ({ children }: Props) => {
   };
 
   return (
-    <div>
-      <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        >
-          <AppBar />
-        </motion.div>
-      </AnimatePresence>
+    <div className={`${theme}`}>
+      <div className="-mt-[70px] bg-white dark:bg-black">
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <AppBar />
+          </motion.div>
+        </AnimatePresence>
 
-      {children}
+        <div className="min-h-[calc(100vh-400px)] mx-auto pt-[30px]">
+          {children}
+        </div>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </div >
   );
 };
 

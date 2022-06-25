@@ -11,7 +11,7 @@ export default function Document() {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         ></meta>
       </Head>
-      <body className="dark scrollbar-hide  bg-black">
+      <body className="scrollbar-hide">
         <Main />
         <NextScript />
       </body>
