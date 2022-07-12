@@ -1,47 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  useTransform,
-  useViewportScroll,
-  Variants,
-} from "framer-motion";
-import FOG from "vanta/dist/vanta.fog.min.js";
+import React from "react";
+import Link from "next/link";
 
 const Hero = () => {
-  const vantaRef = useRef(null);
-  const [vantaEffect, setVantaEffect] = useState(0);
-
-  useEffect(() => {
-    if (!vantaEffect) {
-      setVantaEffect(
-        FOG({
-          el: vantaRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          highlightColor: 0x0,
-          midtoneColor: 0x642169,
-          lowlightColor: 0x0,
-          baseColor: 0x0,
-          blurFactor: 0.49,
-          speed: 3.5,
-          zoom: 0.5,
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
-
   return (
-    <div
-      ref={vantaRef}
-      className="h-[100vh] w-[100vw] flex items-center justify-center bg-[url('data:image/svg+xml,%3csvg xmlns='http://www.w3.org… 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e')]"
-    >
-      <div className="content mt-[10vh] absolute left-[43%] scale-[2.3] opacity-20">
+    <div className="w-[100vw] h-[calc(100vh-100px)] overflow-hidden flex items-center justify-center">
+
+      <div className="overflow-hidden absolute content mt-[10vh] left-[23%] scale-[2.3] opacity-10">
         <div>
           <svg
             width="366"
@@ -141,33 +105,37 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute top-[28%] left-[50%] -translate-x-[50%] w-[90%] md:m-auto z-10  mx-auto">
-        <div className="flex items-center justify-center">
-          <div className="text-start">
-            <h1 className="relative mt-3 mx-auto max-w-[980px] inline font-extrabold text-3xl md:text-6xl text-black dark:text-white">
-              LeulAria{" "}
-              <span className="absolute top-2 right-0 text-xl -ml-2">
-                &trade;
+      <div className="absolute top-[27%] w-[90%] md:m-auto z-10  mx-auto">
+        <div className="flex items-center">
+          <div className="max-w-[840px] xl:max-w-[1080px] w-[80%] mx-auto flex flex-col items-center">
+            <h1 className="block relative text-center mt-3 mb-5 font-extrabold text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-black dark:text-white">
+              <span className="hidden sm:inline-block">Hy their </span>i'm
+              <span className="text-[#3f43ba] dark:text-[#464cef] font-[900]"> leul </span> a fullstack software{" "}
+              <span className="text-[#3f43ba] dark:text-[#464cef] font-[900]">
+                engineer {" "}
               </span>
+              welcome.
             </h1>
 
-            <h1 className="min-h-[80px] md:min-h-[160px] mx-auto max-w-[980px] font-extrabold text-3xl md:text-7xl text-black dark:text-white">
-              Fullstack Software{" "}
-              <span className="text-[#464cef]">Developer</span>
-            </h1>
-            <h1 className="mt-0 font-normal mb-6 max-w-[260px] md:max-w-[500px] text-sm md:text-xl text-gray-00 bg-clip-text text-transparent bg-gradient-to-l  from-[#a7ef89] to-[#9187ef]">
+            <h1 className="font-[300] mb-6 max-w-[500px] xl:max-w-[600px] lg:mt-5 xl:mt-7 w-[90%] sm:w-[80%] mx-auto text-center text-sm md:text-xl lg:text-2xl">
               {
-                "A professional software engineer, currently working as a microservice's and web-application developer."
+                "im currently working as a microservice and web-applications developer."
               }
             </h1>
+            <div className="mt-5 flex flex-col justify-center items-center md:flex-row">
+              <Link href="/contact">
+                <button className="pl-8 flex items-center button-action bg-black dark:text-black text-white rounded-[30px]">
+                  <span className="mr-2">Get In Touch</span>
+                  <svg width="25px" height="25px" className="mt-[5px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Arrow Forward</title><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="48" d="M268 112l144 144-144 144M392 256H100" /></svg>
+                </button>
+              </Link>
 
-            <div className="flex flex-col md:flex-row dark:text-zinc-50 max-w-[70%] md:max-w-[400px] mt-16 md:mt-5 h-[60px] pt-3">
-              <button className=" text-gray-00 bg-clip-text text-transparent bg-gradient-to-l  from-[#4ae806] to-[#5362ea] border-[3px] border-[#bdeaaa] px-9 py-2 flex items-center font-semibold rounded-3xl transition-transform duration-500 hover:scale-110 text-center justify-center">
-                Projects
-              </button>
-              <button className="px-5 py-4 flex items-center font-semibold rounded-2xl mx-5 justify-center">
-                Contact Me {"->"}
-              </button>
+              <Link href="/projects">
+                <button className="pl-8 flex items-center button-action bg-white dark:bg-black text-black dark:text-white rounded-[30px]">
+                  <span className="mr-2">Projects</span>
+                  <svg width="25px" height="25px" className="mt-[5px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Arrow Forward</title><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="48" d="M268 112l144 144-144 144M392 256H100" /></svg>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

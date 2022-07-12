@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Layout/Footer";
 import AppBar from "../components/Layout/AppBar";
 import HomePageIntro from "../components/home/HomePageIntro";
-import Hero2 from "../components/home/Hero2";
+import Hero2 from "../components/home/Hero";
 import { useTheme } from "context/ThemeContext";
 
 const Home: NextPage = () => {

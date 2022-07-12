@@ -2,10 +2,21 @@ import React from "react";
 import Link from "next/link";
 import { useTheme } from "context/ThemeContext";
 import { useRouter } from "next/router";
+import SideMenu from "./SideMenu";
 
 const AppBar = () => {
   const { theme, setTheme } = useTheme();
   const { pathname } = useRouter();
+
+  const data = [
+    { name: "1", url: "/private/loans" },
+    { name: "2", url: "/private/cards" },
+    { name: "3", url: "/private/deposits" },
+    { name: "4", url: "/private/services" },
+    { name: "5", url: "/private/services" },
+    { name: "6", url: "/private/services" },
+    { name: "7", url: "/private/services" }
+  ];
 
   return (
     <>
@@ -30,11 +41,11 @@ const AppBar = () => {
               projects
             </a>
           </Link>
-          <Link href="/blog">
+          {/* <Link href="/blog">
             <a className={`link-style ${pathname === "/blog" && 'active-link'}`}>
               blog
             </a>
-          </Link>
+          </Link> */}
           <Link href="/contact">
             <a
               href=""
@@ -118,6 +129,8 @@ const AppBar = () => {
           </div>
         </div>
       </div>
+
+      {/* <SideMenu overlayColor="#303030" data={data} width={300} />, */}
 
       <div className="mt-[65px]"></div>
     </>

@@ -9,7 +9,7 @@ import {
   Move,
   Sticky,
 } from "react-scroll-motion";
-import Hero2 from "./Hero2";
+import Hero from "./Hero"
 
 const HomePageIntro = () => {
   const animateVariant = batch(Fade(), Move(), Sticky());
@@ -19,7 +19,7 @@ const HomePageIntro = () => {
       <ScrollPage page={0}>
         <Animator animation={animateVariant}>
           <div className="w-full h-full">
-            <Hero2 />
+            <Hero />
           </div>
         </Animator>
       </ScrollPage>
@@ -30,7 +30,7 @@ const HomePageIntro = () => {
       </ScrollPage>
       <ScrollPage page={2}>
         <Animator animation={animateVariant}>
-          <h1 className="font-extrabold mb-6 text-center text-xl md:text-2xl lg:text-7xl max-w-[350px] m-auto md:max-w-[900px]">
+          <h1 className="font-extrabold mb-6 text-center text-2xl md:text-3xl lg:text-7xl w-[90%] max-w-[600px] md:m-auto md:max-w-[900px]">
             i have over 3+ years of <span className="text-[#464cef]">experaince</span> as a fullstack developer.
           </h1>
         </Animator>
