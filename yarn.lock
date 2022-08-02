@@ -549,6 +549,11 @@ react-dom@18.1.0:
     loose-envify "^1.1.0"
     scheduler "^0.22.0"
 
+react-waves-effect@^1.5.0:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-waves-effect/-/react-waves-effect-1.5.1.tgz#20abfe8d3159007842d3ee16e7f4cf0621eaacf2"
+  integrity sha512-FzYjaDkQ6nArVGsOWLVb01mpnt/LLe7+qqFB63GnKPUiL0qY3RuGrQiMpdOzQ9j+CEL1+GgeGrC6QjyHheoa6Q==
+
 react@18.1.0:
   version "18.1.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.1.0.tgz#6f8620382decb17fdc5cc223a115e2adbf104890"
