@@ -2,44 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: Alliance;
-  src: url(../assets/fonts/Alliance-No-1-Regular.woff2) format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: Alliance;
-  src: url(../assets/fonts/Alliance-No-1-SemiBold.woff2) format("woff2");
-  font-style: normal;
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: Alliance;
-  src: url(../assets/fonts/Alliance-No-1-Bold.woff2) format("woff2");
-  font-style: normal;
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: Alliance;
-  src: url(../assets/fonts/Alliance-No-1-ExtraBold.woff2) format("woff2");
-  font-style: normal;
-  font-weight: 900;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Alliance, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Space Grotesk' "Inter", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', "Inter", -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif !important;
+}
+
+@layer components {
+  /* scroll bar */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 6px;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-[#313030] rounded-[5px] cursor-pointer scale-125;
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-[#080808];
+  }
+}
+
+.font-body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
 }
 
 .hero__bg {

@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         body: [
+          "Inter",
           "Urbanist",
           "-apple-system",
           "BlinkMacSystemFont",
@@ -24,5 +25,5 @@ module.exports = {
       }
     }
   },
-  plugins: []
+  plugins: [require("tailwind-scrollbar-hide")]
 };
