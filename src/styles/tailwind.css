@@ -397,16 +397,13 @@
   }
 
 	/* prose styles here */
-	.prose h1,
+	/* .prose h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6 {
-		@apply text-zinc-800 dark:text-zinc-200 !important;
-		font-size: 1.1rem !important;
-
-	}
+	} */
 
 	.prose h1, h2 {
 		font-size: 1.3rem !important;
@@ -416,4 +413,8 @@
 
 * {
 	font-family: Google Sans, Inter, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sans {
+	font-family: Inter, Google Sans, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

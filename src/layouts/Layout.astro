@@ -1,37 +1,96 @@
 ---
-import Header from "../components/Header.astro";
-import BlurCircle from "@/components/shared/BlurCircle.astro";
+import Header from "../components/Header.tsx";
 import Shadow from '@/components/Shadow.astro';
 
 import theme from "@/data/theme";
 import SEOTags from "@/components/seo/SEOTags.astro";
 import type { HeadTags } from "@/utils/types/HeadTags";
 
+import { ViewTransitions } from 'astro:transitions';
+
 import "@fontsource/open-sans";
 import "@/styles/tailwind.css";
 import "@/styles/post.css";
 
+import '../styles/transitions.css'
+
+import '../styles/cursor.css'
+import Footer from "@/components/Footer.astro";
+
+
 export type Props = HeadTags;
 
 const headTags = Astro.props;
+
+
+import removeTrailingSlash from "@/utils/removeTrailingSlash";
+const pathname = removeTrailingSlash(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <SEOTags {...headTags} />
 
+  <ViewTransitions />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <body
-    class="mx-auto flex min-h-screen max-w-[872px] flex-col gap-9 bg-neutral-950 px-10 py-8 text-sm text-neutral-400 md:gap-20 md:py-16"
+    class="mx-auto flex min-h-screen flex-col bg-black text-sm text-neutral-400"
   >
+    <div class="cursor"></div>
     <Shadow />
-    <Header />
-    <BlurCircle position="top" color={theme.colors.blur.top} />
-    <BlurCircle position="bottom" color={theme.colors.blur.bottom} />
+    <Header client:load pathname={pathname} />
     <slot />
+    <Footer />
+
     <style is:global>
       html {
-        font-family: "Open Sans";
+        font-family: "Google Sans";
       }
     </style>
+
+    <script>
+      import { gsap } from '../../node_modules/gsap/index.js'
+
+      var cursor = document.querySelector('.cursor'),
+      cursorScale = document.querySelectorAll('.cursor-scale'),
+      mouseX = 0,
+      mouseY = 0
+
+      gsap.to({}, 0.010, {
+          repeat: -1,
+
+          onRepeat: function () {
+              gsap.set(cursor, {
+                  css: {
+                      left: mouseX,
+                      top: mouseY
+                  }
+              })
+          }
+          
+      });
+
+      window.addEventListener("mousemove", function (e) {
+          mouseX = e.clientX;
+          mouseY = e.clientY
+      });
+
+      cursorScale.forEach(link => {
+          link.addEventListener('mouseleave', () => {
+              cursor.classList.remove('grow');
+              cursor.classList.remove('grow-small');
+          });
+          link.addEventListener('mousemove', () => {
+              cursor.classList.add('grow');
+              if(link.classList.contains('small')){
+                  cursor.classList.remove('grow');
+                  cursor.classList.add('grow-small');
+              }
+          });
+      });
+    </script>
   </body>
 </html>

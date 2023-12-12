@@ -1,0 +1,319 @@
+.vynil-animation-in {
+    animation: appear 600ms ease-in-out 300ms forwards;
+  }
+  .vynil-animation-in-spinning {
+    animation: appear 600ms ease-in-out 300ms forwards, spin 5s linear infinite;
+  }
+  .vynil-animation-out {
+    animation: disappear 300ms ease-in-out forwards;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes appear {
+    0% {
+      left: 0;
+      opacity: 0;
+    }
+    1% {
+      opacity: 1;
+    }
+    100% {
+      left: 24%;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes disappear {
+    0% {
+      left: 24%;
+      opacity: 1;
+    }
+    99% {
+      opacity: 1;
+    }
+    100% {
+      left: 0;
+      opacity: 0;
+    }
+  }
+  
+  ::view-transition-group(header),
+  ::view-transition-group(player) {
+    z-index: 10;
+  }
+  
+  ::view-transition-old(header),
+  ::view-transition-new(header),
+  ::view-transition-old(player),
+  ::view-transition-new(player) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+
+
+
+  /*  animation on top
+  
+  */
+
+
+
+@keyframes jumbo {
+  from {
+      background-position: 50% 50%, 50% 50%;
+  }
+  to {
+      background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.jumbo {
+  --stripes: repeating-linear-gradient(
+      100deg,
+      #fff 0%,
+      #fff 7%,
+      transparent 10%,
+      transparent 12%,
+      #fff 16%
+  );
+  --stripesDark: repeating-linear-gradient(
+      100deg,
+      #000 0%,
+      #000 7%,
+      transparent 10%,
+      transparent 12%,
+      #000 16%
+  );
+  --rainbow: repeating-linear-gradient(
+      100deg,
+      #60a5fa 10%,
+      #e879f9 15%,
+      #60a5fa 20%,
+      #5eead4 25%,
+      #60a5fa 30%
+  );
+  background-image: var(--stripes), var(--rainbow);
+  background-size: 300%, 200%;
+  background-position: 50% 50%, 50% 50%;
+
+  filter: blur(10px) invert(100%);
+  opacity: .1;
+
+  mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+  pointer-events: none;
+}
+
+.jumbo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--stripes), var(--rainbow);
+  background-size: 200%, 100%;
+  animation: jumbo 60s linear infinite;
+  background-attachment: fixed;
+  mix-blend-mode: difference;
+}
+
+.dark .jumbo {
+  background-image: var(--stripesDark), var(--rainbow);
+  filter: blur(10px) opacity(50%) saturate(200%);
+}
+.dark .jumbo::after {
+  background-image: var(--stripesDark), var(--rainbow);
+}
+
+/* glow bg animation */
+
+
+
+
+/*  hero anim */
+
+
+.hero::before {
+  --line: hsl(0 0% 95% / 0.25);
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  opacity: 0.4;
+  background:
+      linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin,
+      linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  z-index: -1;
+}
+
+.disc {
+  height: 100vh;
+  overflow: hidden;
+  /* block-size: 50vmin;
+  inline-size: 50vmin;
+  position: relative; */
+  /* border-radius: 50%; */
+  /* box-shadow: 0 2px 8px; */
+}
+
+.background {
+  position: absolute;
+  inset: -10vmin;
+  background-image: url("https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=3552&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  filter: url("#turbulence");
+  animation: rotate 160s linear infinite;
+  transform: rotate(0deg);
+  max-height: 110vh;
+  overflow: hidden;
+}
+
+.scale {
+  animation: scale-down linear both;
+  animation-timeline: scroll();
+  animation-range: 0 50vh;
+}
+
+
+
+/* animate */
+
+.with-transition .playlist-image {
+  view-transition-name: playlist-image;
+}
+
+.with-transition .playlist-title {
+  view-transition-name: playlist-title;
+}
+
+.with-transition .playlist-stats {
+  view-transition-name: playlist-stats;
+}
+
+.with-transition .playlist-description {
+  view-transition-name: playlist-description;
+}
+
+.with-transition .playlist-avatar {
+  view-transition-name: playlist-avatar;
+}
+
+.with-transition .playlist-add-button {
+  view-transition-name: playlist-add-button;
+}
+
+.with-transition .playlist-user-name {
+  view-transition-name: playlist-user-name;
+}
+
+.with-transition .playlist-user-date {
+  view-transition-name: playlist-user-date;
+}
+
+.with-transition .playlist-controls {
+  view-transition-name: playlist-controls;
+}
+
+.with-transition .playlist-overlay {
+  view-transition-name: playlist-overlay;
+}
+
+.with-transition .playlist-background {
+  view-transition-name: playlist-background;
+}
+
+.with-transition .playlist-back-button {
+  view-transition-name: playlist-back-button;
+}
+
+/**
+* Handle card background transition: expanding and shrinking with
+* different aspect ratios
+*/
+
+::view-transition-old(playlist-background),
+::view-transition-new(playlist-background) {
+  /* Prevent the default animation,
+  so both views remain opacity:1 throughout the transition */
+  animation: none;
+  /* Use normal blending,
+  so the new view sits on top and obscures the old view */
+  mix-blend-mode: normal;
+  /* Make the height the same as the group,
+  meaning the view size might not match its aspect-ratio. */
+  height: 100%;
+  /* Clip any overflow of the view */
+  overflow: clip;
+}
+
+::view-transition-old(playlist-background) {
+  /* Maintain the aspect ratio of the view,
+  by shrinking it to fit within the bounds of the element */
+  object-fit: contain;
+}
+
+::view-transition-new(playlist-background) {
+  /* Maintain the aspect ratio of the view,
+  by growing it to cover the bounds of the element */
+  object-fit: cover;
+}
+
+/**
+* Handle smooth video transition
+*/
+
+::view-transition-old(playlist-image) {
+  display: none;
+}
+
+::view-transition-new(playlist-image) {
+  animation: none;
+}
+
+/**
+* App Header Entry and Exit transitions
+*/
+
+::view-transition-new(app-header):only-child {
+  animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) both slide-in;
+}
+
+::view-transition-old(app-header):only-child {
+  animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) both slide-out;
+}
+
+/**
+* Custom animations
+*/
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-70px);
+  }
+}
+
+@keyframes slide-out {
+  to {
+    transform: translateY(-70px);
+  }
+}

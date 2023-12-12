@@ -1,0 +1,107 @@
+
+---
+const {containerClass="", maskClass="", btnClass="", size="normal", label="", ...rest} = Astro.props;
+const smallBtn = "px-3 py-1 text-xs"
+const normalBtn = "px-5 py-2 text-sm"
+const largeBtn = "px-8 py-3 text-base"
+
+let btnSize = 'normal';
+
+switch(size) {
+  case 'small':
+    btnSize = smallBtn;
+    break;
+  case 'normal':
+    btnSize = normalBtn;
+    break;
+  case 'large':
+    btnSize = largeBtn;
+    break;
+}
+---
+
+<div class:list={["button-container-2", containerClass]}>
+    <div type="button" name="Hover" class:list={[
+      "bg-transparent text-white absolute mx-auto left-[50%] -translate-x-[calc(50%-0px)] scale-[0.91] border flex items-center mx-auto rounded-[2rem] whitespace-nowrap",
+      btnClass,
+      btnSize]}>{label}</sp>
+    <button type="button" name="Hover" class:list={["border flex items-center mx-auto rounded-[2rem]",
+    btnClass,
+    btnSize
+    ]}
+    {...rest}
+    >{label}</button>
+</div>
+
+<style>
+.button-container-2 {
+  position: relative;
+  overflow: hidden;
+  font-weight: 300;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+}
+.button-container-2 button {
+  height: 100%;
+  background: #FFF;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+}
+.button-container-2 button:hover {
+  -webkit-animation: ani 0.7s steps(29) forwards;
+  animation: ani 0.7s steps(29) forwards;
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+</style>

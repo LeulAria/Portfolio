@@ -1,0 +1,883 @@
+---
+import Button from "./Button.astro";
+
+---
+
+<div class="stage">
+    {
+        Array(4).fill(0).map(() => (
+            <section class="slide slide--1" id="slide-1">
+                <div class="col col--1">
+                    <div class="h-full  flex items-center justify-cente">
+                        <div class="relative group border border-neutral-800 p-10 rounded-2xl hover:bg-gray-500/20 max-w-lg mx-auto">
+                            <svg width="325" height="351" viewBox="0 0 325 351" fill="none" class="absolute right-0 top-0 pointer-events-none select-none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.15"><g filter="url(#filter0_f_295_3421)"><circle cx="300" cy="300" r="300" transform="matrix(1 0 0 -1 120.455 231)" fill="url(#paint0_linear_295_3421)"></circle></g><circle cx="267.312" cy="267.312" r="267.312" transform="matrix(1 0 0 -1 158.643 192.812)" fill="url(#paint1_linear_295_3421)" fill-opacity="0.9"></circle><circle cx="267.312" cy="267.312" r="264.767" transform="matrix(1 0 0 -1 158.643 192.812)" stroke="url(#paint2_linear_295_3421)" stroke-opacity="0.3" stroke-width="5.09167"></circle></g><defs><filter id="filter0_f_295_3421" x="0.455078" y="-489" width="840" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_295_3421"></feGaussianBlur></filter><linearGradient id="paint0_linear_295_3421" x1="476.268" y1="421.277" x2="125.205" y2="70.2128" gradientUnits="userSpaceOnUse"><stop stop-color="#7FBCDB"></stop><stop offset="1" stop-color="#3467E9"></stop></linearGradient><linearGradient id="paint1_linear_295_3421" x1="280.812" y1="42.8125" x2="193.812" y2="385.812" gradientUnits="userSpaceOnUse"><stop stop-opacity="0"></stop><stop offset="1"></stop></linearGradient><linearGradient id="paint2_linear_295_3421" x1="267.312" y1="0" x2="267.313" y2="534.625" gradientUnits="userSpaceOnUse"><stop offset="0.605709" stop-color="white" stop-opacity="0"></stop><stop offset="0.81137" stop-color="white"></stop></linearGradient></defs></svg>
+                            <div class="flex justify-between">
+                                
+                                <div class="">
+                                    <p class="text-neutral-200 text-lg font-light">
+                                        Professional services
+                                    </p>
+                                    <p class="text-white text-3xl font-[500] sm:text-4xl mb-5">
+                                        Mashreq Bank
+                                        <!-- Build your SaaS solution with help from our experts -->
+                                    </p>
+                                </div>
+                                <svg class="border rounded-full p-1 transition-all duration-200 group-hover:translate-x-2 group-hover:-translate-y-2 text-white" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.5 5.5h9v9"></path>
+                                    <path d="M5.772 18.228 18.5 5.5"></path>
+                                </svg>
+                            </div>
+                            <br />
+                            <p class="block mt-5 text-gray-300">
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum, sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium
+                            </p>
+        
+                            <div class="w-full flex justify-start">
+                                <Button containerClass="mt-5" size="large" label="Read More" btnClass="font-[500]" />
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col col--2 cursor-scale">
+                    <div class="col__image-wrap">
+                        <img class="img img--1" src="https://assets.codepen.io/61488/duda-1.jpg" />
+                    </div>
+                </div>
+            </section>   
+        ))
+    }
+    
+    <footer class="footer" id="slide-7">
+        <a class="footer__link" href="http://www.duda.ie/" target="_blank">duda.ie</a>
+        <a class="footer__link-top" href="#slide-0">Top<span class="footer__link-top-line"></span></a>
+        <p class="footer__copyright">All images © 2020 Dave Uda</p>
+    </footer>
+
+
+    
+</div>
+
+
+
+<style>
+.logo,
+h1,
+h2 {
+  margin: 0;
+  line-height: 1;
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+.stage {
+  position: relative;
+  visibility: hidden;
+}
+
+/*  ========================================================================== 
+    Nav Header
+    ========================================================================== */
+.header {
+  position: fixed;
+  left: 40px;
+  top: 24px;
+  z-index: 100;
+  display: flex;
+}
+@media all and (max-width: 768px) {
+  .header {
+    display: block;
+    left: 24px;
+  }
+}
+
+.logo {
+  font-size: 27px;
+  letter-spacing: -1px;
+}
+
+.nav-btn,
+.nav-btn__svg {
+  width: 56px;
+  height: 30px;
+}
+
+.nav-btn {
+  display: block;
+  margin: -2px 0 0 56px;
+}
+@media all and (max-width: 768px) {
+  .nav-btn {
+    margin: 18px 0 0 -6px;
+  }
+}
+
+.nav-btn__svg {
+  pointer-events: none;
+}
+
+/*  ========================================================================== 
+    Intro
+    ========================================================================== */
+.intro,
+.footer {
+  height: 100vh;
+}
+
+.intro {
+  position: relative;
+  padding: 5vw;
+  background: #000;
+  overflow: hidden;
+}
+
+.intro__content {
+  position: absolute;
+  right: 8%;
+  bottom: 15%;
+  z-index: 3;
+}
+@media all and (max-width: 768px) {
+  .intro__content {
+    right: auto;
+  }
+}
+
+.intro__title {
+  font-size: 25vw;
+  overflow: hidden;
+  letter-spacing: -2.3vw;
+  padding-right: 2.3vw;
+}
+@media all and (max-width: 768px) {
+  .intro__title {
+    margin-bottom: 5vh;
+  }
+}
+
+.intro__img {
+  position: absolute;
+  width: 35%;
+  max-width: 390px;
+  height: auto;
+}
+@media all and (max-width: 768px) {
+  .intro__img {
+    width: 75vw;
+  }
+}
+
+.intro__img--1 {
+  z-index: 2;
+  left: 10%;
+  bottom: 35%;
+}
+@media all and (max-width: 768px) {
+  .intro__img--1 {
+    left: 50%;
+    bottom: 50vh;
+  }
+}
+
+.intro__img--2 {
+  z-index: 1;
+  left: 25%;
+  bottom: 40%;
+}
+@media all and (max-width: 768px) {
+  .intro__img--2 {
+    left: 70%;
+    bottom: 60vh;
+  }
+}
+
+.intro__txt {
+  max-width: 35vw;
+  margin-left: 25vw;
+}
+@media all and (max-width: 768px) {
+  .intro__txt {
+    max-width: 80vw;
+    margin-left: 5vw;
+  }
+}
+
+/*  ========================================================================== 
+    Slides
+    ========================================================================== */
+.slide {
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  overflow: hidden;
+}
+.slide:nth-of-type(even) {
+  background: #000;
+}
+@media all and (max-width: 768px) {
+  .slide {
+    display: block;
+    position: relative;
+  }
+}
+
+/*  Columns
+    ========================================================================== */
+.col {
+  flex-basis: 50%;
+}
+@media all and (max-width: 768px) {
+  .col {
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.col--1 {
+  position: relative;
+  z-index: 1;
+}
+@media all and (max-width: 768px) {
+  .col--1 {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.col--2 {
+  position: relative;
+  overflow: hidden;
+}
+@media all and (max-width: 768px) {
+  .col--2 {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+  }
+}
+
+/*  ========================================================================== 
+    Column Content
+    ========================================================================== */
+.col__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  height: 100%;
+  padding: 6vw 6vw 10vw;
+}
+@media all and (max-width: 768px) {
+  .col__content {
+    width: 80%;
+  }
+}
+
+
+/*  Column Content
+    ========================================================================== */
+.col__content-title {
+  margin: 0 0 2vw;
+  font-size: 11vw;
+  letter-spacing: -0.8vw;
+}
+@media all and (max-width: 768px) {
+  .col__content-title {
+    margin: 0 0 6vw;
+    font-size: 18vw;
+  }
+}
+
+.col__content-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+@media all and (max-width: 768px) {
+  .col__content-wrap {
+    flex-direction: column;
+  }
+}
+
+.col__content-txt {
+  max-width: 22vw;
+  order: 2;
+  margin-left: 32px;
+}
+@media all and (max-width: 768px) {
+  .col__content-txt {
+    order: 1;
+    max-width: 40vw;
+    margin: 0 0 10vw 10vw;
+  }
+}
+
+.slide-link {
+  position: relative;
+  order: 1;
+  display: flex;
+  justify-content: flex-end;
+  width: 75px;
+  height: 53px;
+}
+.slide-link > * {
+  pointer-events: none;
+}
+@media all and (max-width: 768px) {
+  .slide-link {
+    order: 2;
+    align-self: flex-end;
+  }
+}
+
+.slide-link__circ {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  border: 1px solid var(--dark);
+}
+
+.slide-link__line {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 64px;
+  height: 3px;
+  background: var(--dark);
+}
+
+.line {
+  overflow: hidden;
+}
+.line:nth-of-type(even) {
+  margin-top: -1vw;
+}
+
+.line__inner {
+  display: block;
+}
+
+.slide__scroll-link {
+  position: absolute;
+  right: -113px;
+  bottom: 3.5vw;
+  display: block;
+  width: 140px;
+  height: 140px;
+  background: var(--dark);
+  overflow: hidden;
+}
+@media all and (max-width: 768px) {
+  .slide__scroll-link {
+    display: none;
+  }
+}
+
+.slide__scroll-line {
+  position: absolute;
+  left: 26px;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+}
+
+.slide--0 .slide__scroll-line {
+  background: #C0D7D8;
+}
+
+.slide--1 .slide__scroll-line {
+  background: #D8C0C0;
+}
+
+.slide--2 .slide__scroll-line {
+  background: #CDD5E0;
+}
+
+.slide--3 .slide__scroll-line {
+  background: #F3D3B0;
+}
+
+.slide--4 .slide__scroll-line {
+  background: #F8E9E6;
+}
+
+.slide--5 .slide__scroll-line {
+  background: #D1E2EC;
+}
+
+.slide--6 .slide__scroll-line {
+  background: #D7CEC5;
+}
+
+/*  ========================================================================== 
+    Column Image
+    ========================================================================== */
+.col__image-wrap {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 160vh;
+}
+
+.img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/*  ========================================================================== 
+    Footer
+    ========================================================================== */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #cecece;
+}
+
+.footer__link {
+  font-size: 5vw;
+  color: var(--dark);
+  text-decoration: none;
+  font-family: "Cinzel", serif;
+}
+
+.footer__link-top {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: var(--dark);
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-family: "Cinzel", serif;
+}
+
+.footer__link-top-line {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 1px;
+  height: 50px;
+  background: var(--dark);
+}
+
+.footer__copyright {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+}
+</style>
+
+
+<script>
+  import { gsap } from '../../node_modules/gsap/index.js';
+  import { ScrollTrigger } from '../../node_modules/gsap/ScrollTrigger';
+  import { ScrollToPlugin } from '../../node_modules/gsap/ScrollToPlugin';
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+    // gsap.registerPlugin(SplitText);
+
+    console.clear();
+
+
+    const select = e => document.querySelector(e);
+    const selectAll = e => document.querySelectorAll(e);
+
+    const stage = select('.stage');
+    const slides = selectAll(".slide");
+    const links = selectAll(".slide__scroll-link");
+    const titles = selectAll('.col__content-title');
+    // const introTitle = new SplitText('.intro__title', {type: "lines", linesClass: "intro-line"});
+    // const splitTitles = new SplitText(titles, {type: "lines, chars", linesClass: "line", charsClass: "char", position: "relative" });
+    let slideID = 0;
+
+    function initHeader() {
+        
+        // animate the logo and fake burger button into place
+        
+        let tl = gsap.timeline({delay: 0.5});
+        
+        tl.from('.logo', {
+            y: -40,
+            opacity: 0,
+            duration: 2,
+            ease: 'power4'
+        })
+        .from('.nav-btn__svg rect', {
+            scale: 0,
+            transformOrigin: "center right",
+            duration: 0.6,
+            ease: 'power4',
+            stagger: 0.1
+        }, 0.6)
+        .to('.nav-rect', {
+            scale: 0.8,
+            transformOrigin: "center left",
+            duration: 0.4,
+            ease: 'power2',
+            stagger: 0.1
+        }, "-=0.6")
+        
+        // create mouse animations for the faux burger button
+        
+        let navBtn = select('.nav-btn');
+        
+        navBtn.addEventListener("mouseover", (e) => {
+            gsap.to('.nav-rect', {
+                scaleX: 1,
+                transformOrigin: "top left",
+                duration: 0.4, 
+                ease: "power4"
+            });
+        });
+        
+        navBtn.addEventListener("mouseout", (e) => {
+            gsap.to('.nav-rect', {
+                scaleX: 0.8,
+                transformOrigin: "top left",
+                duration: 0.6, 
+                ease: "power4"
+            });
+        });
+    }
+
+    function initIntro() {
+        
+        // animate the intro elements into place
+        
+        let tl = gsap.timeline({delay: 1.2});
+        
+        tl.from('.intro-line', {
+            // x: 100,
+            y: 400,
+            ease: 'power4',
+            duration: 3
+        })
+        .from('.intro__txt', {
+            x: -100,
+            opacity: 0,
+            ease: 'power4',
+            duration: 3
+        }, 0.7)
+        .from('.intro__img--1', {
+            // x: -50,
+            y: 50,
+            opacity: 0,
+            ease: 'power2',
+            duration: 10
+        }, 1)
+        .from('.intro__img--2', {
+            // x: 50,
+            y: -50,
+            opacity: 0,
+            ease: 'power2',
+            duration: 10
+        }, 1);
+        
+        // set up scrollTrigger animation for the when the intro scrolls out
+        
+        let stl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.intro',
+                scrub: 1,
+                start: "top bottom", // position of trigger meets the scroller position
+                end: "bottom top"
+            }
+        });
+        
+        stl.to('.intro__title', {
+            x: 400,
+            ease: 'power4.in',
+            duration: 3,
+            
+        })
+        .to('.intro__txt', {
+            y: 100,
+            ease: 'power4.in',
+            duration: 3,
+        }, 0);
+    }
+
+    function initLinks() {
+        
+        // ScrollToPlugin links
+        
+        links.forEach((link, index, e) => {     
+            
+            let linkST = link.querySelector('.slide__scroll-line');
+            
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                gsap.to(window, {
+                    duration: 2, 
+                    scrollTo:{
+                        y: "#slide-" + (index + 2)
+                    },
+                    ease: "power2.inOut"
+                });
+                slideID++;
+            });
+            
+            link.addEventListener("mouseover", (e) => {
+                gsap.to(linkST, {
+                    y:40,
+                    transformOrigin: "bottom center",
+                    duration: 0.6, 
+                    ease: "power4"
+                });
+            });
+            
+            link.addEventListener("mouseout", (e) => {
+                gsap.to(linkST, {
+                    y: 0,
+                    transformOrigin: "bottom center",
+                    duration: 0.6, 
+                    ease: "power4"
+                });
+            });
+            
+        });
+        
+        // ScrollToPlugin link back to the top
+        
+        let top = select('.footer__link-top');
+        
+        top.addEventListener("click", (e) => {
+            e.preventDefault();
+            scrollTop();
+        });
+        
+        top.addEventListener("mouseover", (e) => {
+            gsap.to('.footer__link-top-line', {
+                scaleY: 3,
+                transformOrigin: "bottom center",
+                duration: 0.6, 
+                ease: "power4"
+            });
+        });
+        
+        top.addEventListener("mouseout", (e) => {
+            gsap.to('.footer__link-top-line', {
+                scaleY: 1,
+                transformOrigin: "bottom center",
+                duration: 0.6, 
+                ease: "power4"
+            });
+        });
+        
+        // Dummy slide links
+        
+        let slideLinks = selectAll('.slide-link');
+        
+        slideLinks.forEach((slideLink, index, e) => {
+            
+            let slideL = slideLink.querySelector('.slide-link__line');
+            
+            slideLink.addEventListener("mouseover", (e) => {
+                gsap.to(slideL, {
+                    x: 20,
+                    scaleX: 0.3,
+                    transformOrigin: "right center",
+                    duration: 0.8, 
+                    ease: "power4"
+                });
+            });
+            slideLink.addEventListener("mouseout", (e) => {
+                gsap.to(slideL, {
+                    x: 0,
+                    scaleX: 1,
+                    transformOrigin: "right center",
+                    duration: 0.8, 
+                    ease: "power4"
+                });
+            });
+        })
+    }
+
+    function initSlides() {
+        
+        // Animation of each slide scrolling into view
+        
+        slides.forEach((slide, i) => {   
+            
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: slide,
+                    start: "40% 50%", // position of trigger meets the scroller position
+                }
+            });
+    
+            tl.from(slide.querySelectorAll('.col__content-title'), {
+                ease: "power4",
+                y: "+=5vh",
+                duration: 2.5,
+            })
+            .from(slide.querySelectorAll('.line__inner'), {
+                y: 200,
+                duration: 2,
+                ease: "power4",
+                stagger: 0.1
+            }, 0)
+            .from(slide.querySelectorAll('.col__content-txt'), {
+                x: 100,
+                y: 50,
+                opacity: 0,
+                duration: 2,
+                ease: "power4"
+            }, 0.4)
+            .from(slide.querySelectorAll('.slide-link'), {
+                x: -100,
+                y: 100,
+                opacity: 0,
+                duration: 2,
+                ease: "power4"
+            }, 0.3)
+            .from(slide.querySelectorAll('.slide__scroll-link'), {
+                y: 200,
+                duration: 3,
+                ease: "power4"
+            }, 0.4)
+            .to(slide.querySelectorAll('.slide__scroll-line'), {
+                scaleY: 0.6,
+                transformOrigin: "bottom left",
+                duration: 2.5, 
+                ease: "elastic(1,0.5)"
+            }, 1.4)
+        });
+        
+        // External footer link scroll animation
+        
+        gsap.from('.footer__link', {
+            scrollTrigger: {
+                trigger: '.footer',
+                scrub: 2,
+                start: "50% 100%", // position of trigger meets the scroller position
+                end: "0% 0%",
+            },
+            y: "20vh",
+            ease: 'sine'
+        })
+    }
+
+    function initParallax() {
+        
+        slides.forEach((slide, i) => {
+            let imageWrappers = slide.querySelectorAll('.col__image-wrap');
+            
+            gsap.fromTo(imageWrappers, {
+                y: "-50vh"
+            },{
+                y: "50vh",
+                scrollTrigger: {
+                    trigger: slide,
+                    scrub: true,
+                    start: "top bottom", // position of trigger meets the scroller position (cuando el top del trigger llega al bottom del viewport)
+                    snap: {
+                        snapTo: 0.1, // 0.5 'cause the scroll animation range is 200vh for parallax effect
+                        duration: 1,
+                        ease: 'power4.inOut'
+                    }
+                },
+                ease: 'none'
+            })
+        });
+    }
+
+    function scrollTop() {
+        gsap.to(window, {
+            duration: 2, 
+            scrollTo: {
+                y: "#slide-0"
+            },
+            ease: "power2.inOut"
+        });
+        gsap.to('.footer__link-top-line', {
+            scaleY: 1,
+            transformOrigin: "bottom center",
+            duration: 0.6, 
+            ease: "power4"
+        });
+    }
+
+    function initKeys() {
+        document.addEventListener('keydown', (e) => {
+            e.preventDefault();
+            if(event.keyCode == 40) { //down arrow to next slide
+                if(slideID <= slides.length) {
+                    slideID++;
+                    gsap.to(window, {
+                        duration: 2, 
+                        scrollTo:{
+                            y: "#slide-" + slideID 
+                        },
+                        ease: "power2.inOut"
+                    });
+                }
+            }
+            else if(event.keyCode == 38) { // up arrow to top
+                slideID = 0;
+                scrollTop();
+            }
+        });
+    }
+
+    function init() {
+        gsap.set(stage, { autoAlpha: 1 });
+    //  initHeader();
+    // initIntro();
+        //initLinks();
+        initSlides();
+        initParallax();
+    // initKeys();
+    }
+
+    window.onload = () => {
+        init();
+    };
+
+
+    var items = document.querySelectorAll(".list__item")
+
+    items.forEach(item => {
+    var itemTitle = item.querySelector(".list__item__title")
+    var itemTitleOutline = item.querySelector(".list__item__titleOutline")
+    var itemImg = item.querySelector(".list__item img")
+    
+    var itemTL = gsap.timeline({scrollTrigger: {
+        trigger: item,
+        start: "0% 75%",
+        end: "25% 50%",
+        scrub: 3,
+    }})
+    
+    itemTL.fromTo(itemTitle, {scale: 2, y: "100%"}, {scale: 1, y: "0%", ease: "power2.inOut"}, 0)
+    itemTL.fromTo(itemTitleOutline, {scale: 2, y: "100%"}, {scale: 1, y: "0%", ease: "power2.inOut"}, 0)
+    
+    gsap.fromTo(itemImg, {x: "60vw", y : "60vh", rotate: -30}, {x: "-60vw", y: "-60vh", rotate: 30, ease: "none", scrollTrigger: {
+        trigger: item,
+        start: "50% 100%",
+        end: "100% 50%",
+        scrub: 3,
+    }})
+    })
+</script>

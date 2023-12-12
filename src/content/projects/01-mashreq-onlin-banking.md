@@ -1,9 +1,10 @@
 ---
-title: "The Power Of React Hooks"
+title: "Mashreq bank money transfer"
 publishedAt: 2023-05-24
 description: "Lorem ipsum dolor sit amet consectetur et ultrices blandit neque ege"
 slug: "the-power-of-react-hooks"
 isPublish: true
+banner: "https://leularia.vercel.app/projects/ahun.jpg"
 ---
 
 ## Vocesque meum remis est neque Neptunus monte

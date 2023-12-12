@@ -6,7 +6,9 @@ type Social = {
 type Presentation = {
   mail: string;
   title: string;
+  about: string;
   description: string;
+  description2: string;
   socials: Social[];
   profile?: string;
 };
@@ -14,9 +16,11 @@ type Presentation = {
 const presentation: Presentation = {
   mail: "leulsegedtariku@gmail.com",
   title: "Welcome!",
+  about: 'Hy im leul, fullstack software engineer, with over *4 years* of experience.',
   profile: "/profile-pic.webp",
   description:
-    "with over *4 years* of experience delivering high quality software solutions. I am currently working as software engineer for <a href='https://mashreqbank.com'>*Mashreq Bank*</a>, Driving Innovation and Enhancing Customer Experiences. ",
+    "I am currently working as software engineer for <a href='https://mashreqbank.com'>*Mashreq Bank*</a> and <a href='https://portal.expanzo.com/'>*Expanzo*</a>, driving innovation, solving problems and enhancing customer experiences.",
+  description2:  "Passionate about open source, i actively contribute to and develop opensource projects and libraries, embracing the collaborative spirit that drives the evolution.",
   socials: [
     {
       label: "github",

@@ -1,0 +1,100 @@
+---
+import Button from "./Button.astro"
+
+
+import { getCollection } from "astro:content";
+
+const experiances = (await getCollection("experiances")).sort(function (first, second) {
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
+
+---
+
+<main class="relative max-w-4xl mx-auto h-full">
+  <svg class="absolute z-20 -top-[15px] -left-[15px] text-neutral-400" width="30" height="30" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="m12.03 5-.018 14"></path>
+    <path d="M5 12h14"></path>
+    </svg>
+
+    <div class="card-header z-10 sticky top-[100px] border border-neutral-800 p-6 flex items-center justify-between text-white w-full bg-black/40 backdrop-blur-sm">
+      <svg width="325" height="351" viewBox="0 0 325 351" fill="none" class="absolute right-0 top-0 pointer-events-none select-none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.15"><g filter="url(#filter0_f_295_3421)"><circle cx="300" cy="300" r="300" transform="matrix(1 0 0 -1 120.455 231)" fill="url(#paint0_linear_295_3421)"></circle></g><circle cx="267.312" cy="267.312" r="267.312" transform="matrix(1 0 0 -1 158.643 192.812)" fill="url(#paint1_linear_295_3421)" fill-opacity="0.9"></circle><circle cx="267.312" cy="267.312" r="264.767" transform="matrix(1 0 0 -1 158.643 192.812)" stroke="url(#paint2_linear_295_3421)" stroke-opacity="0.3" stroke-width="5.09167"></circle></g><defs><filter id="filter0_f_295_3421" x="0.455078" y="-489" width="840" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur_295_3421"></feGaussianBlur></filter><linearGradient id="paint0_linear_295_3421" x1="476.268" y1="421.277" x2="125.205" y2="70.2128" gradientUnits="userSpaceOnUse"><stop stop-color="#7FBCDB"></stop><stop offset="1" stop-color="#3467E9"></stop></linearGradient><linearGradient id="paint1_linear_295_3421" x1="280.812" y1="42.8125" x2="193.812" y2="385.812" gradientUnits="userSpaceOnUse"><stop stop-opacity="0"></stop><stop offset="1"></stop></linearGradient><linearGradient id="paint2_linear_295_3421" x1="267.312" y1="0" x2="267.313" y2="534.625" gradientUnits="userSpaceOnUse"><stop offset="0.605709" stop-color="white" stop-opacity="0"></stop><stop offset="0.81137" stop-color="white"></stop></linearGradient></defs></svg>
+        <div class="flex items-center">
+          <svg width="51" height="51" class="pointer-events-none select-none" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.5 11.5V7a1 1 0 0 0-1-1H12L9.5 3h-6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1H11"></path>
+            <path d="m19 14.5 2.5 2.5-2.5 2.5"></path>
+            <path d="M15 14.5 12.5 17l2.5 2.5"></path>
+            </svg>
+            <div class="ml-5">
+                <h1 class="text-lg font-bold">Projects</h1>
+                <p class="text-neutral-300">Some of my personal and professional projects that i have participated and worked on.</p>
+            </div>
+        </div>
+
+        <div class="">
+          <Button label="More projects" />
+        </div>
+    </div>
+    
+    <ul>
+      {
+        experiances.length >0 && experiances.slice(0,4).map((experiance, i) => (
+          <li>
+            <article class:list={["relative group p-7 border-t-0 border border-neutral-800 overflow-hidden cursor-pointer hover:bg-neutral-800/40", { "border-r-0": i%2==0 }]}>
+              <div class="absolute w-full top-8 right-8 flex justify-end group-hover:translate-x-[3px]">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  class="transition-all duration-300 group-hover:translate-x-1 text-white"
+                >
+                  <path
+                    d="M5.25 12.75L12.75 5.25"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                  <path
+                    d="M5.25 5.25H12.75V12.75"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <div class="">
+                <h3 class="mb-2">Develop.</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima alias fuga et ab magnam aliquam commodi ratione vel fugit nesciunt voluptatibus.
+                </p>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+
+<style>
+
+.card-header::before {
+  --line: hsl(0 0% 95% / 0.25);
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  opacity: 0.4;
+  background:
+      linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin,
+      linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+  mask: linear-gradient(-15deg, transparent 30%, rgb(255, 255, 255));
+  top: 0;
+  z-index: -1;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
