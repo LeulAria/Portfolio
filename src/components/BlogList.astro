@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Button from "./Button.astro"
 
 
-const posts = (await getCollection("posts")).sort(function (first, second) {
+const blogs = (await getCollection("blogs")).sort(function (first, second) {
   return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
 });
 
@@ -29,7 +29,7 @@ const posts = (await getCollection("posts")).sort(function (first, second) {
     </div>
     <ul>
       {
-        posts.length >0 && posts.slice(0,4).map(() => (
+        blogs.length >0 && blogs.slice(0,4).map(() => (
           <li>
             <article class="border border-neutral-800 rounded-2xl overflow-hidden">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
