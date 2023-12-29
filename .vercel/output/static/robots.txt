@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://demo.maxencewolff.com/sitemap-index.xml

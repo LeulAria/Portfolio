@@ -1,0 +1,349 @@
+---
+import Button from "@/components/Button.astro";
+import ListCard from "@/components/listview/ListCard.astro";
+import ListLayout from "@/components/listview/ListLayout.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+import presentation from "@/data/presentation";
+import Layout from "@/layouts/Layout.astro"
+import convertAsteriskToStrongTag from "@/utils/convertAsteriskToStrongTag";
+import type { Code } from "astro:components";
+
+import { getCollection } from "astro:content";
+
+const experiances = (await getCollection("experiances")).sort(function (first, second) {
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
+const blogs = (await getCollection("blogs")).sort(function (first, second) {
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
+const projects = (await getCollection("projects")).sort(function (first, second) {
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
+
+---
+
+<Layout title="Experiances">
+    <main class="">
+        <main class="absolute top-0">
+          <div class="relative flex flex-col h-[100vh] items-center justify-center transition-bg">
+              <div class="absolute inset-0 overflow-hidden">
+                  <div class="jumbo absolute -inset-[10px] opacity-50"></div>
+              </div>
+          </div>
+        </main>
+
+        <div class="relative w-full hero-section mt-[2vh]">
+            <div class="hero">
+                <article
+                    class="md:gap-12 rounded-3xl z-10 scale max-w-4xl mx-auto bg-transparent overflow-hidden"
+                >
+                      <div class=" p-1">
+                        <a href="/" class="w-8 h-8 border rounded-full block flex items-center justify-center border-neutral-500 transition-colors duration-200 hover:bg-neutral-800 hover:text-white">
+                          <svg  width="20" height="20"  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M2.9 12h18"></path>
+                              <path d="m8.9 18-6-6 6-6"></path>
+                          </svg>
+                        </a>
+                        <h1 class="mt-5 hero-text text-3xl lg:text-5xl tracking-tighter font-[300]">
+                            Projects
+                        </h1>
+                        <div class="text-sm lg:text-lg text-gray-200">
+                          Personal and professional projects that i have participated and worked on.
+                        </div>
+                    </div>        
+                </article>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+
+          <div class="flex space-x-1 justify-start items-center max-w-4xl mx-auto z-100 relative mb-5">
+              <button class="border py-[.45rem] px-4 mt-[1rem] rounded-3xl border-neutral-700 transition-colors duration-200 hover:text-white">Coding</button>
+              <button class="border py-[.45rem] px-4 mt-[1rem] rounded-3xl border-neutral-700 transition-colors duration-200 hover:text-white">Tutorial</button>
+              <button class="border py-[.45rem] px-4 mt-[1rem] rounded-3xl border-neutral-700 transition-colors duration-200 hover:text-white">Content</button>
+              <button class="border py-[.45rem] px-4 mt-[1rem] rounded-3xl border-neutral-700 transition-colors duration-200 hover:text-white">Vlogs</button>
+          </div>
+          
+          <div class="spacing-y-5">
+            {
+              projects.map((project, i) => (
+                <ListCard 
+                    custom
+                    noBorder
+                    class="my-5"
+                    hideLeftBorder={false}
+                    href="/projects"
+                    data={project}
+                >
+                    <div>
+                        {
+                            project.banner && (
+                                <img src={project.banner} class="mb-3 max-w-[200px] rounded-lg" alt="">
+                            )
+                        }
+                        <div class="flex justify-between">
+
+                            <h3 class="text-lg text-white">{project.data.title}</h3>
+                            <div class="text-xs text-gray-200">
+                                <span>Oct 2020 - Present</span>
+                            </div> 
+                        </div>
+                        <div class="mt-3 sans  text-neutral-300">
+                            <p class="sans">Working in Air Asia airline technology department, help building internal tooling to support one of the most efficient airline companies across the globe.</p>
+                            <ul class="list-disc mt-3 ml-5">
+                                <li class="sans font-[300]">Help developing travel pass project for the pandemic period.</li>
+                                <li class="sans font-[300]">System to schedule passengers when flight is canceled.</li>
+                                <li class="sans font-[300]">Integrating services between airports and staff.</li>
+                                <li class="sans font-[300]">Developing new features and bringing web technologies into airport CUSS kiosk system.</li>
+                            </ul>
+                        </div>
+                        <Button containerClass="mt-4 mr-auto w-[150px] ml-1" label="View Experiance" btnClass="font-[500]" />
+                    </div>
+                </ListCard>
+              ))
+            }
+          </div>
+        </div>
+    </main>
+</Layout>
+  
+<style>
+
+    
+
+@keyframes jumbo {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.jumbo {
+    --stripes: repeating-linear-gradient(
+        100deg,
+        #fff 0%,
+        #fff 7%,
+        transparent 10%,
+        transparent 12%,
+        #fff 16%
+    );
+    --stripesDark: repeating-linear-gradient(
+        100deg,
+        #000 0%,
+        #000 7%,
+        transparent 10%,
+        transparent 12%,
+        #000 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+
+    filter: blur(10px) invert(100%);
+    opacity: .1;
+
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+    pointer-events: none;
+}
+
+.jumbo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.dark .jumbo {
+    background-image: var(--stripesDark), var(--rainbow);
+    filter: blur(10px) opacity(50%) saturate(200%);
+}
+.dark .jumbo::after {
+    background-image: var(--stripesDark), var(--rainbow);
+}
+
+/* glow bg animation */
+
+
+    .hero::before {
+        --line: hsl(0 0% 95% / 0.25);
+        content: "";
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        opacity: 0.4;
+        background:
+            linear-gradient(90deg, var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin,
+            linear-gradient(var(--line) 1px, transparent 1px 10vmin) 0 -5vmin / 10vmin 10vmin;
+        mask: linear-gradient(-15deg, transparent 30%, white);
+        top: 0;
+        z-index: -1;
+    }
+
+    .disc {
+        height: 100vh;
+        overflow: hidden;
+        /* block-size: 50vmin;
+        inline-size: 50vmin;
+        position: relative; */
+        /* border-radius: 50%; */
+        /* box-shadow: 0 2px 8px; */
+    }
+
+    .background {
+        position: absolute;
+        inset: -10vmin;
+        background-image: url("https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=3552&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+        filter: url("#turbulence");
+        animation: rotate 160s linear infinite;
+        transform: rotate(0deg);
+        max-height: 110vh;
+        overflow: hidden;
+    }
+
+    .scale {
+        animation: scale-down linear both;
+        animation-timeline: scroll();
+        animation-range: 0 50vh;
+    }
+
+    .hero-text  {
+        font-weight: 900;
+        color: white;
+        padding-bottom: 5px;
+    }
+
+
+    @keyframes scale-down {
+        to { scale: 0.92; opacity: 0; }
+    }
+
+    .content {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        scale: 0.95;
+    }
+    @supports (animation-timeline: scroll()) {
+        .content {
+            view-timeline: --content;
+            animation: grow linear both;
+            animation-timeline: scroll();
+            animation-range: 0 50vh;
+        }
+    }
+
+    @keyframes grow {
+        to { scale: 1; }
+    }
+
+    .content svg {
+        height: 100%;
+        position: absolute;
+        right: 0%;
+        top: 0;
+        overflow: visible !important;
+        z-index: -1;
+    }
+
+    .content svg path {
+        stroke-width: clamp(2rem, 2vw, 4rem);
+    }
+
+    @media only screen and (orientation: portrait) {
+        svg {
+            display: none;
+        }
+    }
+
+    section {
+        height: 100vh;
+    }
+
+    main > section {
+        height: 80vh;
+        display: grid;
+        place-items: center;
+        position: sticky;
+        top: 0;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .backers path {
+        stroke: hsl(0 0% 50%);
+    }
+
+    .fillers path {
+        stroke: hsl(0 100% 50% / 1);
+    }
+
+    .fillers path:nth-of-type(1) {
+        --len: 8620;
+        stroke: hsl(140 80% 60%);
+    }
+    .fillers path:nth-of-type(2) {
+        --len: 7200;
+        stroke: hsl(140 90% 60%);
+    }
+    .fillers path:nth-of-type(3) {
+        --len: 7952;
+        stroke: hsl(140 90% 50%);
+    }
+
+    .fillers path {
+        stroke-dasharray: var(--len);
+        stroke-dashoffset: var(--len);
+    }
+
+    @supports (animation-timeline: scroll()) {
+        .fillers path {
+            animation: fill linear both;
+            animation-timeline: --content;
+            animation-range: entry-crossing -38% exit 12%;
+        }
+    }
+
+    @keyframes fill {
+        to { stroke-dashoffset: 0; }
+    }
+
+    .content section {
+        display: grid;
+        align-content: center;
+        padding: 0 6rem;
+    }
+
+    section h2 {
+        /* font-size: clamp(2rem, 4vw + 1rem, 4rem); */
+        /* font-weight: 120; */
+        /* color: hsl(0 0% 90%); */
+        /* width: 10ch;
+        white-space: nowrap; */
+    }
+
+    section:nth-of-type(3),
+    section:nth-of-type(4) {
+        justify-items: end;
+    }
+
+    /* contact button */
+
+</style>

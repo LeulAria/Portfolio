@@ -1,0 +1,36 @@
+---
+import Button from "@/components/Button.astro";
+import Layout from "@/layouts/Layout.astro";
+
+---
+<Layout title="Not found">
+    <main>
+        <div class="max-w-screen-xl mx-auto px-4 flex justify-start h-screen md:px-8">
+            <div class="max-w-lg mx-auto text-gray-300 pt-[25vh]">
+                <div class="space-y-3 text-center">
+                    <h3 class="text-white font-semibold">
+                        404 Error
+                    </h3>
+                    <p class="text-white text-4xl font-[900] sm:text-4xl">
+                        Page not found
+                    </p>
+                    <p class="mt-6">
+                        Sorry, the page you are looking for could not be found or has been removed.
+                    </p>
+                </div>
+                <div class="mt-5">
+                    <a href={'/'}>
+                        <Button label={"Go Back"} id="goBack" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<script>
+    const goBack = document.getElementById('goBack');
+    goBack?.addEventListener('click', () => {
+        window.history.back()
+    })
+</script>
